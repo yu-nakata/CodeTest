@@ -8,6 +8,8 @@ target 'CodeTestApp' do
   # Pods for CodeTestApp
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'OHHTTPStubs/Swift'
+  pod 'Alamofire'
 
   target 'CodeTestAppTests' do
     inherit! :search_paths
