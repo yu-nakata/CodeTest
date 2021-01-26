@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="FTt-te-afk">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i0Y-2X-oyC" customClass="MainViewController" customModule="CodeTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LYl-7I-oFt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9aI-aN-YXL" customClass="RotateView" customModule="CodeTestApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="9aI-aN-YXL" secondAttribute="height" multiplier="1:1" id="vjX-rq-orj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9Mt-jq-i3L"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="9aI-aN-YXL" firstAttribute="centerX" secondItem="LYl-7I-oFt" secondAttribute="centerX" id="Qro-iz-ua4"/>
+                            <constraint firstItem="9aI-aN-YXL" firstAttribute="centerY" secondItem="LYl-7I-oFt" secondAttribute="centerY" id="hnm-yi-xQc"/>
+                            <constraint firstItem="9aI-aN-YXL" firstAttribute="width" secondItem="9Mt-jq-i3L" secondAttribute="width" id="zQN-c1-uk9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="rotateView" destination="9aI-aN-YXL" id="fus-yh-1RR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="amy-Ii-BnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="320" y="94"/>
+        </scene>
+    </scenes>
+</document>
