@@ -46,6 +46,9 @@ class LoginViewController: UIViewController {
             .drive(onNext: { [weak self] result in
                 if result {
                     // 成功
+                    let sb = UIStoryboard(name: "MainViewController", bundle: nil)
+                    let vc = sb.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                    self?.present(vc, animated: true, completion: nil)
                 } else {
                     // 失敗時アラートを表示
                     let alert = UIAlertController(title: nil, message: self?.viewModel.errMsgRelay.value, preferredStyle: .alert)

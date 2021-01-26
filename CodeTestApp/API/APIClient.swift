@@ -32,6 +32,27 @@ class APIClient {
             }
             return Disposables.create()
         }
+    }
+    
+    func getImage(imageUrl: String) -> Observable<UIImage?> {
+        return Observable.create { observer in
+            AF.download(imageUrl).responseData { response in
+                switch response.result {
+                case .success(_):
+                    print("SUCCESS")
+                    if let data = response.value {
+                        let image = UIImage(data: data)
+                        observer.onNext(image)
+                    }
+                    observer.onCompleted()
+                case .failure(let error):
+                    print(error)
+                    observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
+    }
 }
 
 
