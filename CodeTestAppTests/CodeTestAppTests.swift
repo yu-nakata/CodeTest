@@ -6,6 +6,9 @@
 //
 
 import XCTest
+import RxSwift
+import RxCocoa
+import OHHTTPStubs
 @testable import CodeTestApp
 
 class CodeTestAppTests: XCTestCase {
@@ -19,8 +22,59 @@ class CodeTestAppTests: XCTestCase {
     }
 
     func testExample() throws {
+        let disposeBag = DisposeBag()
+        let loginViewModel = LoginViewModel()
+        let loginModel = LoginModel()
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        stub(condition: isHost("codetestapp.com")) { _ in
+            // IDとパスワードでエラー振り分ける
+            var jsonName = "0.json"
+            if loginModel.mail != loginViewModel.SUCCESS_MAIL && loginModel.password != loginViewModel.SUCCESS_PASSWORD {
+                jsonName = "1.json"
+            } else {
+                if loginModel.mail != loginViewModel.SUCCESS_MAIL {
+                    jsonName = "2.json"
+                } else if loginModel.password != loginViewModel.SUCCESS_PASSWORD {
+                    jsonName = "3.json"
+                }
+            }
+            
+            let stubPath = OHPathForFile(jsonName, type(of: self))
+            return fixture(filePath: stubPath!, status: 200, headers: ["Content-Type":"application/json"]).requestTime(TimeInterval(0), responseTime: TimeInterval(1.5))
+        }
+        
+        // 正常系
+        loginModel.mail = "test@gmail.com"
+        loginModel.password = "test"
+        APIClient().login(loginModel: loginModel)
+            .subscribe(onNext: { (result) in
+                XCTAssertEqual(result?.resultCode, 0)
+            }).disposed(by : disposeBag)
+
+        
+        // アドレスミス
+        loginModel.mail = "test"
+        loginModel.password = "test"
+        APIClient().login(loginModel: loginModel)
+            .subscribe(onNext: { (result) in
+                XCTAssertEqual(result?.resultCode, -2)
+            }).disposed(by : disposeBag)
+        
+        // パスワードミス
+        loginModel.mail = "test@gmail.com"
+        loginModel.password = "t"
+        APIClient().login(loginModel: loginModel)
+            .subscribe(onNext: { (result) in
+                XCTAssertEqual(result?.resultCode, -3)
+            }).disposed(by : disposeBag)
+        
+        // どちらも不正
+        loginModel.mail = "test"
+        loginModel.password = "t"
+        APIClient().login(loginModel: loginModel)
+            .subscribe(onNext: { (result) in
+                XCTAssertEqual(result?.resultCode, -1)
+            }).disposed(by : disposeBag)
     }
 
     func testPerformanceExample() throws {
