@@ -24,6 +24,10 @@
 		072BA8E325BEB58B00DDE3D7 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 072BA8DF25BEB58B00DDE3D7 /* 1.json */; };
 		072BA8E925BEBDBF00DDE3D7 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BA8E825BEBDBF00DDE3D7 /* APIClient.swift */; };
 		072BA8FC25BEBF8B00DDE3D7 /* APIResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072BA8FB25BEBF8B00DDE3D7 /* APIResult.swift */; };
+		072BA91225BFDEA900DDE3D7 /* 3.json in Resources */ = {isa = PBXBuildFile; fileRef = 072BA8DD25BEB58B00DDE3D7 /* 3.json */; };
+		072BA91325BFDEA900DDE3D7 /* 0.json in Resources */ = {isa = PBXBuildFile; fileRef = 072BA8DE25BEB58B00DDE3D7 /* 0.json */; };
+		072BA91425BFDEA900DDE3D7 /* 2.json in Resources */ = {isa = PBXBuildFile; fileRef = 072BA8DC25BEB58A00DDE3D7 /* 2.json */; };
+		072BA91525BFDEA900DDE3D7 /* 1.json in Resources */ = {isa = PBXBuildFile; fileRef = 072BA8DF25BEB58B00DDE3D7 /* 1.json */; };
 		893CEFFC2EBA0C8F6DC9ADC4 /* Pods_CodeTestApp_CodeTestAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A788262FAFA97C948299050 /* Pods_CodeTestApp_CodeTestAppUITests.framework */; };
 		8B1C7BC5B1A63A64ACB6DC49 /* Pods_CodeTestAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0031EF5D12E7831CBBFC8A0 /* Pods_CodeTestAppTests.framework */; };
 		A9DB2BB8D855E3F94D13746A /* Pods_CodeTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB0423F6D6711BE34EB3767D /* Pods_CodeTestApp.framework */; };
@@ -365,6 +369,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				072BA91325BFDEA900DDE3D7 /* 0.json in Resources */,
+				072BA91225BFDEA900DDE3D7 /* 3.json in Resources */,
+				072BA91425BFDEA900DDE3D7 /* 2.json in Resources */,
+				072BA91525BFDEA900DDE3D7 /* 1.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

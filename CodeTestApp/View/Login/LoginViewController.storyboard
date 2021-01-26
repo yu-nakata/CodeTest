@@ -63,6 +63,10 @@
                                     <color key="titleColor" systemColor="systemGray5Color"/>
                                 </state>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FG-eg-KhJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.29848030821917809" colorSpace="calibratedWhite"/>
+                            </view>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Nqi-ds-Y3c">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
@@ -75,16 +79,21 @@
                             <constraint firstItem="013-gb-e05" firstAttribute="top" secondItem="C38-rm-70c" secondAttribute="bottom" constant="18" id="Q4D-qL-7TC"/>
                             <constraint firstItem="C38-rm-70c" firstAttribute="top" secondItem="npg-NX-GS7" secondAttribute="bottom" constant="16" id="VXO-1L-KV8"/>
                             <constraint firstItem="syq-LJ-a5a" firstAttribute="width" secondItem="Ug7-jS-CeS" secondAttribute="width" multiplier="0.7" id="bRb-Ix-Y1h"/>
+                            <constraint firstItem="0FG-eg-KhJ" firstAttribute="leading" secondItem="Ug7-jS-CeS" secondAttribute="leading" id="c1g-xr-ZUS"/>
                             <constraint firstItem="sZJ-1N-PYd" firstAttribute="width" secondItem="Ug7-jS-CeS" secondAttribute="width" multiplier="0.7" id="c42-9Q-qAw"/>
                             <constraint firstItem="013-gb-e05" firstAttribute="centerX" secondItem="2OR-Nu-ABC" secondAttribute="centerX" id="ekV-ri-krl"/>
                             <constraint firstItem="npg-NX-GS7" firstAttribute="top" secondItem="Ug7-jS-CeS" secondAttribute="top" constant="16" id="mUT-CP-sh8"/>
+                            <constraint firstItem="Ug7-jS-CeS" firstAttribute="bottom" secondItem="0FG-eg-KhJ" secondAttribute="bottom" id="ptz-ec-UDP"/>
                             <constraint firstItem="Nqi-ds-Y3c" firstAttribute="centerY" secondItem="2OR-Nu-ABC" secondAttribute="centerY" id="qkk-qx-01r"/>
+                            <constraint firstItem="0FG-eg-KhJ" firstAttribute="top" secondItem="Ug7-jS-CeS" secondAttribute="top" id="rGD-V8-6BJ"/>
+                            <constraint firstItem="Ug7-jS-CeS" firstAttribute="trailing" secondItem="0FG-eg-KhJ" secondAttribute="trailing" id="sWd-j3-Oa5"/>
                             <constraint firstItem="013-gb-e05" firstAttribute="width" secondItem="Ug7-jS-CeS" secondAttribute="width" multiplier="0.6" id="wEs-Z0-r5Q"/>
                             <constraint firstItem="Nqi-ds-Y3c" firstAttribute="centerX" secondItem="2OR-Nu-ABC" secondAttribute="centerX" id="ywr-bs-h56"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Nqi-ds-Y3c" id="L9L-pe-a8y"/>
+                        <outlet property="coverView" destination="0FG-eg-KhJ" id="r00-sN-k1g"/>
                         <outlet property="loginButton" destination="013-gb-e05" id="7K4-jc-8R3"/>
                         <outlet property="mailTextField" destination="sZJ-1N-PYd" id="GcK-B9-D7q"/>
                         <outlet property="passwordTextField" destination="syq-LJ-a5a" id="pDr-82-ZzU"/>

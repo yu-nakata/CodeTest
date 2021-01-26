@@ -17,6 +17,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var coverView: UIView!
     
     private let disposeBag = DisposeBag()
     
@@ -32,8 +33,10 @@ class LoginViewController: UIViewController {
             .drive(onNext: { [weak self] result in
                 if result {
                     self?.activityIndicator.startAnimating()
+                    self?.coverView.isHidden = false
                 } else {
                     self?.activityIndicator.stopAnimating()
+                    self?.coverView.isHidden = true
                 }
             })
             .disposed(by: disposeBag)
